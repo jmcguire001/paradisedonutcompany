@@ -10,4 +10,10 @@ public partial class Flavor
     public string Flavorname { get; set; } = null!;
 
     public string? Image { get; set; }
+
+    public string? Description { get; set; }
+
+    public float? Price { get; set; }
+
+    public string? Category { get; set; }
 }
