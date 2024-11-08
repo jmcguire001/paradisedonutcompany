@@ -1,3 +1,3 @@
 #!/bin/bash
-nohup sudo dotnet run --project /home/ec2-user/paradisedonutcompany/paradisedonutcompany.csproj &
+sudo systemctl start pdc.service
 sudo systemctl start nginx
