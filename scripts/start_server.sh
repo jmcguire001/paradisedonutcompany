@@ -1,3 +1,4 @@
 #!/bin/bash
 sudo systemctl start nginx
-sudo dotnet run --project ~/paradisedonutcompany/paradisedonutcompany.csproj &
+cd ~/paradisedonutcompany
+sudo dotnet run --project paradisedonutcompany.csproj &
