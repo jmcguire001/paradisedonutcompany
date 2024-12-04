@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row gy-4 justify-content-center justify-content-lg-between">
                     <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                        <h1 data-aos="fade-up">Enjoy Your Super-Duper<br>Yummy Donuts</h1>
+                        <h1 data-aos="fade-up">Enjoy Our Super-Duper<br>Yummy Donuts</h1>
                         <p data-aos="fade-up" data-aos-delay="100">We have the best donuts in all of Utah County - and the world!</p>
                         <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                             <a href="#contact" class="btn-get-started">Order Donuts</a>
@@ -25,9 +25,11 @@
                     <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
                         @foreach(var flavor in Model)
                         {
+                            var donutUrl = "https://pdc-bucket.s3.us-east-2.amazonaws.com" + @flavor.Image;
+
                             if(flavor.Id == 0)
                             {
-                                <img src="https://pdc-bucket.s3.us-east-2.amazonaws.com" + "@flavor.Image" class="img-fluid animated" alt="" style="box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.5); border-radius: 8px;">
+                                <img src="@donutUrl" class="img-fluid animated" alt="" style="box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.5); border-radius: 8px;">
                             }
                         }
                     </div>
@@ -150,8 +152,10 @@
                         <div class="row gy-5">
                             @foreach (var flavor in Model)
                             {
+                                var donutUrl = "https://pdc-bucket.s3.us-east-2.amazonaws.com" + @flavor.Image;
+                                
                                 <div class="col-lg-4 menu-item">
-                                    <a href="@flavor.Image" class="glightbox"><img src="@flavor.Image" class="menu-img img-fluid" alt=""></a>
+                                    <a href="@donutUrl" class="glightbox"><img src="@donutUrl" class="menu-img img-fluid" alt=""></a>
                                     <h4>@flavor.Flavorname</h4>
                                     <p class="ingredients">@flavor.Description</p>
                                     <p class="price">$@flavor.Price</p>
@@ -171,10 +175,12 @@
                         <div class="row gy-5">
                             @foreach (var flavor in Model)
                             {
-                                if(flavor.Category == "Iced")
+                                var donutUrl = "https://pdc-bucket.s3.us-east-2.amazonaws.com" + @flavor.Image;
+
+                                if (flavor.Category == "Iced")
                                 {
                                     <div class="col-lg-4 menu-item">
-                                        <a href="@flavor.Image" class="glightbox"><img src="@flavor.Image" class="menu-img img-fluid" alt=""></a>
+                                        <a href="@donutUrl" class="glightbox"><img src="@donutUrl" class="menu-img img-fluid" alt=""></a>
                                         <h4>@flavor.Flavorname</h4>
                                         <p class="ingredients">@flavor.Description</p>
                                         <p class="price">$@flavor.Price</p>
@@ -194,10 +200,12 @@
                         <div class="row gy-5">
                             @foreach (var flavor in Model)
                             {
+                                var donutUrl = "https://pdc-bucket.s3.us-east-2.amazonaws.com" + @flavor.Image;
+
                                 if (flavor.Category == "Glazed")
                                 {
                                     <div class="col-lg-4 menu-item">
-                                        <a href="@flavor.Image" class="glightbox"><img src="@flavor.Image" class="menu-img img-fluid" alt=""></a>
+                                        <a href="@donutUrl" class="glightbox"><img src="@donutUrl" class="menu-img img-fluid" alt=""></a>
                                         <h4>@flavor.Flavorname</h4>
                                         <p class="ingredients">@flavor.Description</p>
                                         <p class="price">$@flavor.Price</p>
@@ -218,10 +226,12 @@
                         <div class="row gy-5">
                             @foreach (var flavor in Model)
                             {
+                                var donutUrl = "https://pdc-bucket.s3.us-east-2.amazonaws.com" + @flavor.Image;
+
                                 if (flavor.Category == "Filled")
                                 {
                                     <div class="col-lg-4 menu-item">
-                                        <a href="@flavor.Image" class="glightbox"><img src="@flavor.Image" class="menu-img img-fluid" alt=""></a>
+                                        <a href="@donutUrl" class="glightbox"><img src="@donutUrl" class="menu-img img-fluid" alt=""></a>
                                         <h4>@flavor.Flavorname</h4>
                                         <p class="ingredients">@flavor.Description</p>
                                         <p class="price">$@flavor.Price</p>
@@ -242,10 +252,12 @@
                         <div class="row gy-5">
                             @foreach (var flavor in Model)
                             {
+                                var donutUrl = "https://pdc-bucket.s3.us-east-2.amazonaws.com" + @flavor.Image;
+
                                 if (flavor.Category == "Limited Time")
                                 {
                                     <div class="col-lg-4 menu-item">
-                                        <a href="@flavor.Image" class="glightbox"><img src="@flavor.Image" class="menu-img img-fluid" alt=""></a>
+                                        <a href="@donutUrl" class="glightbox"><img src="@donutUrl" class="menu-img img-fluid" alt=""></a>
                                         <h4>@flavor.Flavorname</h4>
                                         <p class="ingredients">@flavor.Description</p>
                                         <p class="price">$@flavor.Price</p>
